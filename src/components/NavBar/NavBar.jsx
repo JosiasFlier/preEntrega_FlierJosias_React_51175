@@ -1,13 +1,16 @@
+import { Link } from "react-router-dom";
 import EmojiCart from "../EmojiCart";
 import "./navbar.css";
 
 function NavBar() {
     return (
         <div className="style-navbar">
-            <img src="/imgs/logo.png" className="style-logo" alt="Logo" />
+            <Link  to="/">
+                <img src="/imgs/logo.png" className="style-logo m-1 p-1" alt="Logo" />
+            </Link>
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
-                    <a className="navbar-brand"></a>
+                    <Link className="navbar-brand"></Link>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -17,33 +20,25 @@ function NavBar() {
                         aria-expanded="false"
                         aria-label="Toggle navigation"
                     >
-                        <span classNameName="navbar-toggler-icon"></span>
+                        <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div
-                        className="collapse navbar-collapse"
-                        id="navbarNavAltMarkup"
-                    >
+                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            {/* la idea es que tenga el active, lo pondré mas adelante */}
-                            <a
-                                className="nav-link"
-                                aria-current="page"
-                                href="index.html"
-                            >
+                            <Link className="nav-link" aria-current="page" to="/category/Nacionales">
                                 NACIONALES
-                            </a>
-                            <a
-                                className="nav-link"
-                                href="pages/internacionales.html"
-                            >
+                            </Link>
+                            <Link className="nav-link" to="/category/Internacionales">
                                 INTERNACIONALES
-                            </a>
-                            <a className="nav-link" href="pages/retros.html">
+                            </Link>
+                            <Link className="nav-link" to="/category/Selecciones">
+                                SELECCIONES
+                            </Link>
+                            <Link className="nav-link" to="/category/Retro">
                                 RETROS
-                            </a>
-                            <a className="nav-link" href="pages/contacto.html">
+                            </Link>
+                            <Link className="nav-link" to="*">
                                 CONTACTO
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
