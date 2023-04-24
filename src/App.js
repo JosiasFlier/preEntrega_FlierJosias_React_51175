@@ -5,26 +5,33 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import * as bootstrap from "bootstrap";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import Footer from './components/Footer/Footer';
+import { CartProvider } from './context/cartContext';
+import CartContainer from './components/CartContainer/CartContainer';
+
 
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <div className="App-body">
-          <NavBar/>
-          <Routes>
-            <Route path="/" element={<ItemListContainer />}/>
-            <Route path="/category/:categoryid" element={<ItemListContainer />}/>
-            <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+    <>
+      <CartProvider>
+        <BrowserRouter>
+          <div className="App">
+            <div className="App-body">
+              <NavBar/>
+              <Routes>
+                <Route path="/" element={<ItemListContainer />}/>
+                <Route path="/category/:categoryid" element={<ItemListContainer />}/>
+                <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+                <Route path="/cart" element={<CartContainer />} />
 
-            {/* Agrega aquí otras rutas si es necesario */}
-            <Route path="*" element={<h1>Error 404 : Page Not Found</h1>} />
-          </Routes>
-        </div>
-      </div>
-    </BrowserRouter>
+                {/* Agrega aquí otras rutas si es necesario */}
+                <Route path="*" element={<h1>Error 404 : Page Not Found</h1>} />
+              </Routes>
+            </div>
+          </div>
+        </BrowserRouter>
+    </CartProvider>
+    </>
   );
 }
 

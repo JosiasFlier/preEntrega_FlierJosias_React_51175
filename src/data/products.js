@@ -1,4 +1,4 @@
-const productsData = [
+const products = [
     {
         id: 1,
         title: "Boca Juniors",
@@ -7,7 +7,7 @@ const productsData = [
         detail: "Está elaborada en 100% poliéster y con un calce regular para brindarte mayor comodidad y poder utilizarla en cualquier ocasión.",
         price: 11999,
         stock: 100,
-        image: "../imgs/camisetas/nacionales/boca_tit_22.jpg",
+        image: "https://i.ibb.co/jf9ZLhk/boca-tit-22.webp",
     },
     {
         id: 2,
@@ -16,8 +16,9 @@ const productsData = [
         description: "Adidas Titular 2022",
         detail: "Esta prenda está inspirada en el partido amistoso jugado una semana antes del comienzo del Mundial 86 en Colombia contra Junior de Baranquilla. Su diseño rememora el utilizado por los jugadores en aquel partido, con el escudo termoadherido, el número 10 en la espalda y el logo coronados de gloria aplicado en transfer.",
         price: 11999,
+        offer: 15,
         stock: 70,
-        image: "../imgs/camisetas/nacionales/river_tit_22.jpg",
+        image: "https://i.ibb.co/T0zJgmQ/river-tit-22.webp",
     },
     {
         id: 3,
@@ -27,7 +28,7 @@ const productsData = [
         detail: "Camiseta de cuello redondo y mangas cortas, material poliester, escudo del equipo aplicado y logo de la marca, corte holgado para mejores moviemientos - Tercera camiseta 2022",
         price: 10999,
         stock: 40,
-        image: "../imgs/camisetas/nacionales/belgrano_alt_23.jpg",
+        image: "https://i.ibb.co/n8RxdNb/belgrano-alt-23.webp",
     },
     {
         id: 4,
@@ -36,8 +37,8 @@ const productsData = [
         description: "Nike Titular 2020",
         detail: "La tecnología Nike Dri-FIT absorbe el sudor de la piel para acelerar la evaporación, lo que ayuda a mantener la transpirabilidad y la comodidad. El ajuste estándar te dará una sensación relajada y cómoda",
         price: 9999,
-        stock: 10,
-        image: "../imgs/camisetas/internacionales/barcelona_tit_20.jpg",
+        stock: 0,
+        image: "https://i.ibb.co/M1ctZFj/barcelona-tit-20.jpg",
     },
     {
         id: 5,
@@ -47,7 +48,7 @@ const productsData = [
         detail: "Es una réplica auténtica del uniforme que usan tus jugadores favoritos en los partidos de local. Además, incorpora la tecnología dryCELL, que absorbe la humedad de la piel y te asegura protección.",
         price: 10999,
         stock: 15,
-        image: "../imgs/camisetas/internacionales/man_city_tit_21.jpg",
+        image: "https://i.ibb.co/8dcg4J0/man-city-tit-21.webp",
     },
     {
         id: 6,
@@ -56,8 +57,9 @@ const productsData = [
         description: "Kappa Titular 2021",
         detail: "Tecnología Kombat, registrada por la marca KAPPA para optimizar la performance de alta competencia, basada en la liviandad, elasticidad y justa evaporación de la transpiración.",
         price: 8999,
+        offer: 25,
         stock: 5,
-        image: "../imgs/camisetas/internacionales/napoli_tit_21.jpg",
+        image: "https://i.ibb.co/CMgxL8r/napoli-tit-21.webp",
     },
     {
         id: 7,
@@ -67,7 +69,7 @@ const productsData = [
         detail: "Creada para mantener a los hinchas cómodos, combina paneles de malla y tecnología de absorción AEROREADY. Hecho con materiales 100% reciclados.",
         price: 11999,
         stock: 10,
-        image: "../imgs/camisetas/internacionales/realmadrid_alt_22.jpg",
+        image: "https://i.ibb.co/1TVmDNP/realmadrid-alt-22.jpg",
     },
     {
         id: 8,
@@ -77,7 +79,7 @@ const productsData = [
         detail: "Confeccionada con cuello en V y mangas cortas para mayor frescura y con el escudo del club que más alegrías te dio sobre el pecho.",
         price: 10999,
         stock: 10,
-        image: "../imgs/camisetas/nacionales/newells_tit_22.jpg",
+        image: "https://i.ibb.co/y67Xz6H/newells-tit-22.jpg",
     },
     {
         id: 9,
@@ -86,8 +88,8 @@ const productsData = [
         description: "Umbro Titular 2022",
         detail: "Una prenda de juego confeccionada con mangas cortas, un corte regular con franjas sublimadas. Un cuello en V que te hace lucir el mejor estilo futbolero y el escudo original festoneado. El poliéster con la que está fabricada es tan liviana como suave para que solo te concentres en vencer a tu oponente.",
         price: 10999,
-        stock: 10,
-        image: "../imgs/camisetas/nacionales/rosariocentral_tit_22.jpg",
+        stock: 0,
+        image: "https://i.ibb.co/tPKgyWK/rosariocentral-tit-22.jpg",
     },
     {
         id: 10,
@@ -96,8 +98,9 @@ const productsData = [
         description: "Manto Helado 2022",
         detail: "El manto mas helado que puedas encontrar en el mercado, con uns sistema de refrigeracion en el pecho que hace que te mantengas fresco todo el partido, camiseta ideal para cuando hace 40 grados de calor",
         price: 10,
+        offer: 90,
         stock: 2,
-        image: "../imgs/camisetas/nacionales/talleres_tit_22.jpg",
+        image: "https://i.ibb.co/861kqRL/talleres-tit-22.jpg",
     },
     {
         id: 11,
@@ -107,7 +110,7 @@ const productsData = [
         detail: "Esta prenda estampa sobre su espalda la tercera estrella que simboliza la entrega, la fuerza y la pasión de todos los argentinos.",
         price: 15999,
         stock: 60,
-        image: "../imgs/camisetas/selecciones/argentina_tit_22.jpg",
+        image: "https://i.ibb.co/88XV0cw/argentina-tit-22.jpg",
     },
     {
         id: 12,
@@ -117,7 +120,7 @@ const productsData = [
         detail: "Inspirada en los colores de la bandera del país, esta camiseta visitante adidas distorsiona la D de 'Deutschland' para reflejar el dinamismo del equipo actual. Enfocada en mantener los hinchas orgullosos y cómodos, esta camiseta incluye detalles tejidos del equipo y tecnología de absorción AEROREADY.",
         price: 14999,
         stock: 10,
-        image: "../imgs/camisetas/selecciones/alemania_alt_22.jpg",
+        image: "https://i.ibb.co/BcpkWsx/alemania-alt-22.webp",
     },
     {
         id: 13,
@@ -126,8 +129,9 @@ const productsData = [
         description: "Titular 2022",
         detail: "Con tejido de poliéster y tecnología Aeroready que te da frescura en todo el tiempo que la lleves puesta. Con el escudo Nacional en el frente y el lema 'Unidos por un país' en la espalda para demostrar tu apoyo que es eterno.",
         price: 13999,
+        offer: 20,
         stock: 5,
-        image: "../imgs/camisetas/selecciones/colombia_tit_22.jpg",
+        image: "https://i.ibb.co/4tSSvNh/colombia-tit-22.jpg",
     },
     {
         id: 14,
@@ -137,7 +141,7 @@ const productsData = [
         detail: "Aprovechando los paneles laterales, se incorporan líneas blancas alternadas con celestes para crear una referencia a la bandera. El escudo se aplica en blanco y dorado, mientras que los logos de PUMA van en blanco. El apodo “La Celeste” adorna el posterior del cuello en dorado. Posee tecnologia DryCell que ayuda a despedir la humedad para que la piel permanezca seca y cómoda. Logo PUMA y escudo AUF estampados.",
         price: 10999,
         stock: 5,
-        image: "../imgs/camisetas/selecciones/uruguay_tit_21.jpg",
+        image: "https://i.ibb.co/54TpBzr/uruguay-tit-21.webp",
     },
     {
         id: 15,
@@ -147,7 +151,7 @@ const productsData = [
         detail: "La tecnología Nike Dri-FIT absorbe el sudor de la piel para acelerar la evaporación, lo que ayuda a mantener la transpirabilidad y la comodidad. El ajuste estándar te dará una sensación relajada y cómoda",
         price: 12999,
         stock: 5,
-        image: "../imgs/camisetas/internacionales/barcelona_alt_22.jpg",
+        image: "https://i.ibb.co/njL3Lyg/barcelona-alt-22.jpg",
     },
     {
         id: 16,
@@ -157,7 +161,7 @@ const productsData = [
         detail: "Por primera vez, las rayas rojas y negras fluyen por la camiseta en ángulo, inspiradas en el escudo del club y la representación de los tres ríos de Manchester. Fabricada con tecnología DryCELL, diseñada para absorber la humedad del cuerpo y mantenerlo libre de sudor durante el ejercicio",
         price: 13999,
         stock: 10,
-        image: "../imgs/camisetas/internacionales/man_city_alt_22.jpg",
+        image: "https://i.ibb.co/rQHq2Ph/man-city-alt-22.jpg",
     },
     {
         id: 17,
@@ -167,7 +171,7 @@ const productsData = [
         detail: "Su confección en poliester y elastano te ofrece confort para tus movimientos y momentos en casa mirando los partidos. Esta remera se cierra con el número 10 en la espalda y aplique estampado 'Coronados de Gloria' convirtiéndola en una prenda imprescindible en tu cajón.",
         price: 15999,
         stock: 20,
-        image: "../imgs/camisetas/retro/argentina_retro_86.jpg",
+        image: "https://i.ibb.co/88cnksH/argentina-retro-86.jpg",
     },
     {
         id: 18,
@@ -177,7 +181,7 @@ const productsData = [
         detail: "Material: Set de Poliester (POC), Composición: 85% poliester, 15% Elastano. Al tratarse de un tejido terminado en blanco óptico, las tintas que utilizamos para su estampado, se incrustan perfectamente en la fibra del tejido permitiendo colores vivos. Puede ser lavado tranquilamente sin miedo a que destiña.",
         price: 15999,
         stock: 5,
-        image: "../imgs/camisetas/retro/alemania_retro_90.jpg",
+        image: "https://i.ibb.co/ryBThqM/alemania-retro-90.jpg",
     },
     {
         id: 19,
@@ -186,8 +190,9 @@ const productsData = [
         description: "Retro 1986",
         detail: "Esta prenda está inspirada en el partido amistoso jugado una semana antes del comienzo del Mundial 86 en Colombia contra Junior de Baranquilla. Su diseño rememora el utilizado por los jugadores en aquel partido, con el escudo termoadherido, el número 10 en la espalda y el logo coronados de gloria aplicado en transfer.",
         price: 14999,
+        offer: 10,
         stock: 10,
-        image: "../imgs/camisetas/retro/argentina_retro_alt_86.jpg",
+        image: "https://i.ibb.co/xMnwwLt/argentina-retro-alt-86.jpg",
     },
     {
         id: 20,
@@ -197,8 +202,8 @@ const productsData = [
         detail: "La camiseta viste los bastones en azul marino y azul royal, y está confeccionada en poliéster más elastano, brindando confort, suavidad, y mejora en proporción de movimientos. Escudo inspirado en el 86, en TPU termoadherido. Logo LE COQ SPORTIF aplicado en transfer.",
         price: 15999,
         stock: 15,
-        image: "../imgs/camisetas/retro/argentina_retro_alt2_86.jpg",
+        image: "https://i.ibb.co/0GtH38n/argentina-retro-alt2-86.jpg",
     },
 ];
 
-export default productsData;
+export default products;

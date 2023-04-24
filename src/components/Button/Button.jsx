@@ -1,8 +1,11 @@
 const Button = (props) => {
+
+
+
   return (
     <button
-      type="button"
-      className={`btn btn-sm btn-outline-secondary`}
+      type={props.type}
+      className={props.className}
       disabled={props.disabled}
       onClick={props.onClick}
     >

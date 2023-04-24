@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import EmojiCart from "../EmojiCart";
 import "./navbar.css";
+// import { useContext } from "react";
+// import { cartContext } from "../../context/cartContext";
 
 function NavBar() {
+    // const { cart } = useContext(cartContext);
     return (
         <div className="style-navbar">
             <Link  to="/">
@@ -36,14 +39,16 @@ function NavBar() {
                             <Link className="nav-link" to="/category/Retro">
                                 RETROS
                             </Link>
-                            <Link className="nav-link" to="*">
-                                CONTACTO
+                            <Link className="nav-link" to="/cart">
+                                CARRITO
                             </Link>
                         </div>
                     </div>
                 </div>
             </nav>
-            <EmojiCart />
+            <Link className="nav-link" to="/cart">
+                <EmojiCart />
+            </Link>
         </div>
     );
 }
