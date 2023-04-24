@@ -2,15 +2,18 @@ import { useState } from "react";
 import Button from "../Button/Button";
 
 export default function ItemCount(props){
-    const [count, setCount] = useState(0);
-
+    const [count, setCount] = useState(1);
 
     function handleAdd() {
-        setCount(count + 1);
+        if (count < 3) {
+            setCount(count + 1);
+        }
     }
 
     function handleSubstract() {
-        setCount(count - 1);
+        if (count > 1) {
+            setCount(count - 1);
+        }
     }
 
     return (
@@ -26,3 +29,6 @@ export default function ItemCount(props){
         </div>
     )
 }
+
+
+

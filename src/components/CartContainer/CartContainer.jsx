@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { cartContext } from "../../context/cartContext";
 import Button from "../Button/Button";
+import FormCheckout from "./FormCheckout";
 import { Link } from "react-router-dom";
 import "./cartContainer.css";
 import { createOrder } from "../../services/firestore";
@@ -18,9 +19,7 @@ function CartContainer() {
     const cart = context.cart;
     const removeItem = context.removeItem;
 
-    // Creo una funcion con el valor total del carrito
-    // Que multiplica cada valor del producto por su cantidad,
-    // y va sumando (Reduce) todos los montos totales de los item del carrito
+    // Creo una funcion con el valor total del carrito, que multiplica cada valor del producto por su cantidad, y va sumando (Reduce) todos los montos totales de los item del carrito
     function calculateTotalCart(cart) {
         return cart.reduce((suma, item) => suma + item.count * item.price, 0);
     }
@@ -33,20 +32,24 @@ function CartContainer() {
     }
 
     // Creo una funcion para crear una Orden de compra
-    async function handleCheckout() {
+    async function handleCheckout(userData) {
         const order = {
             itmes: cart,
-            buyer: { name: "Josias Flier" },
+            buyer: userData,
             total: totalCart,
             date: new Date(),
         };
 
+        
         const orderId = await createOrder(order);
 
+        // Limpio el carrito de compras luego de finalizar compra
+        context.clearCart();
+
         const orderComplete = await MySwal.fire({
-            title: "Gracias por tu compra",
+            title: "Gracias por tu compra " + userData.username,
             html:
-                "<p>Tu ticket es: " +
+                "<p>N° de transacción: " +
                 orderId +
                 "</p>" +
                 "<p>El total de tu compra es de $ " + totalCart + "</p>",
@@ -58,6 +61,7 @@ function CartContainer() {
             icon: "success",
         });
     }
+    
 
     return (
         <div className="container">
@@ -77,7 +81,7 @@ function CartContainer() {
                 </>
             ) : (
                 <>
-                    <h1>Carrito de Compras</h1>
+                    <h1 className="cart-title mt-4">CARRITO DE COMPRAS</h1>
                     <table className="table cart-table">
                         <thead className="thead-dark">
                             <tr>
@@ -89,7 +93,7 @@ function CartContainer() {
                                 <th scope="col">Total</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="cart-body">
                             {cart.map((item) => (
                                 <tr key={item.id}>
                                     <td>
@@ -125,12 +129,12 @@ function CartContainer() {
                     <div className="cartList_detail cartList-bg">
                         <h4>El total de tu compra es de ${totalCart}</h4>
                     </div>
-                    <Button
+                    <FormCheckout
                         onClick={handleCheckout}
                         className="btn btn-primary"
                     >
                         Finalizar Compra
-                    </Button>
+                    </FormCheckout>
                 </>
             )}
         </div>
@@ -139,4 +143,3 @@ function CartContainer() {
 
 export default CartContainer;
 
-// https://i.ibb.co/82j87bz/empty-cart.png

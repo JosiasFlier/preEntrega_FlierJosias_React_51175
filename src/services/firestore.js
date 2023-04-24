@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, getDocs, getDoc, addDoc, query, where } from "firebase/firestore";
+import { getFirestore, collection, orderBy, doc, getDocs, getDoc, addDoc, query, where } from "firebase/firestore";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -22,8 +22,9 @@ export async function getItems(){
     // 1. Creo la referancia a la coleccion deseada
     const productsRef = collection(db, "products")
 
-    // 2. Pido los documentos de esa coleccion
-    const productsSnap = await getDocs(productsRef);
+    // 2. Pido los documentos de esa coleccion ordenados por su "index"
+    const q = query(productsRef, orderBy("index"));
+    const productsSnap = await getDocs(q);
     const documents = productsSnap.docs;
 
     // 3. Extraigo los datos de los documentos

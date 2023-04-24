@@ -3,16 +3,19 @@ import { Link } from "react-router-dom";
 import "./itemList.css"
 
 function ItemList({ products }) {
+
     return (
         <div className="container mr-2 ml-2">
             <div className="row">
                 {products.map((product) => (
-                    <div className="col-md-3" key={product.id}>
+                    <div className="col-md-3" key={product.id} >
                         <br />
                         <Link to={`/detalle/${product.id}`} className="no-underline">
                             <div
                                 className="card mb-3 shadow-sm"
                                 category={product.category}
+                                stock={product.stock}
+                                offer={product.offer}
                             >
                                 <img
                                     className="card-img-top"

@@ -1,5 +1,6 @@
 .cart-table {
     background-color: #fff; /* Establece el fondo de la tabla en blanco */
+    
 }
 
 .cartList-bg {
@@ -8,4 +9,15 @@
 
 .cartList_detail h4 {
     color: black;
-  }
+    background-color: rgba(12, 206, 12, 0.692);
+}
+
+.thead-dark, .thead-dark tr {
+    color: #fff;
+    background-color: #00000093;
+}
+
+.cart-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}

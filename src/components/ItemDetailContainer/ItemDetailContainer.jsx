@@ -11,21 +11,17 @@ function ItemDetailContainer() {
   const [product, setProduct] = useState([]);
 
   let { id } = useParams();
-  console.log(id);
 
   const { cart, addItem} = useContext(cartContext);
 
   useEffect(() => {
     getSingleItem(id).then((respuesta) => {
-      console.log("promesa cumplida", respuesta);
-
       setProduct(respuesta);
     });
   }, [id]);
 
   function onAddToCart(count) {
     addItem(product, count);
-    console.log('Agregado al Carrito')
   }
 
   if (product.length === 0) {

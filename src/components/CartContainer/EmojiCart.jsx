@@ -1,6 +1,6 @@
-import "./NavBar/navbar.css";
+import "../NavBar/navbar.css";
 import { useContext } from "react";
-import { cartContext } from "../context/cartContext";
+import { cartContext } from "../../context/cartContext";
 
 
 function EmojiCart() {

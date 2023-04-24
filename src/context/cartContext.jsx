@@ -1,8 +1,7 @@
-import { createContext, useState } from 'react';
-
+import { createContext, useState } from "react";
 
 // Creo un Contexto
-const cartContext = createContext()
+const cartContext = createContext();
 // Saco el Provider de adentro del contexto
 const Provider = cartContext.Provider;
 
@@ -13,51 +12,56 @@ const Provider = cartContext.Provider;
 // y porque necesitamos tener estado, por eso creamos el componente
 // creamos el estado, renderizamos el provider
 
-function CartProvider(props){
-    const [ cart, setCart] = useState([]);
+function CartProvider(props) {
+    const [cart, setCart] = useState([]);
     const newCart = [...cart];
 
-    function addItem(product, countFromCounter){
+    function addItem(product, countFromCounter) {
         if (isItemInCart(product.id)) {
-            const itemIndex = cart.findIndex((itemInCart) => itemInCart.id === product.id);
+            const itemIndex = cart.findIndex(
+                (itemInCart) => itemInCart.id === product.id
+            );
             newCart[itemIndex].count += countFromCounter;
         } else {
-            newCart.push({...product, count: countFromCounter});
+            newCart.push({ ...product, count: countFromCounter });
         }
         setCart(newCart);
     }
 
     function isItemInCart(id) {
-        return cart.some(itemInCart => itemInCart.id === id )
+        return cart.some((itemInCart) => itemInCart.id === id);
     }
 
+    // Creo una funcion para limpiar el carrito luego de una compra
+    const clearCart = () => {
+        setCart([]);
+    };
 
     // Creo la funcion para eliminar elementos del carrito
     function removeItem(itemId) {
-        const updatedCart = cart.filter(item => item.id !== itemId);
+        const updatedCart = cart.filter((item) => item.id !== itemId);
         setCart(updatedCart);
     }
-    
-
 
     // Creo una funcion, que recorre el array cart, y devuelve
     // la suma de la propiedad count de cada elemento del array
     // Osea, cuenta la cantidad total de productos que hay en el carrito
     function countItems() {
         let totalCount = 0;
-            cart.forEach((item) => {
+        cart.forEach((item) => {
             totalCount += item.count;
         });
         // Retorna la cantidad total de productos del carrito.
         return totalCount;
     }
 
-    return(
-        <Provider value={{ cart, addItem, isItemInCart, countItems, removeItem}}>
+    return (
+        <Provider
+            value={{ cart, addItem, isItemInCart, countItems, removeItem, clearCart }}
+        >
             {props.children}
         </Provider>
-
-    )
+    );
 }
 
-export { cartContext, CartProvider};
+export { cartContext, CartProvider };

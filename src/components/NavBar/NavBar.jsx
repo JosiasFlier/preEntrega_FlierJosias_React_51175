@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import EmojiCart from "../EmojiCart";
+import EmojiCart from "../CartContainer/EmojiCart";
 import "./navbar.css";
 // import { useContext } from "react";
 // import { cartContext } from "../../context/cartContext";
