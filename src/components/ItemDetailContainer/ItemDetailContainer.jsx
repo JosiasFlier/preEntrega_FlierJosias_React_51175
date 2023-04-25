@@ -5,6 +5,16 @@ import Loader from "../Loader/Loader";
 import { useContext } from "react";
 import { cartContext } from "../../context/cartContext";
 import { getSingleItem } from "../../services/firestore";
+import { Link } from "react-router-dom";
+import Button from "../Button/Button";
+
+// --------------SWEETALERT2---------------------------------
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const MySwal = withReactContent(Swal);
+
+// --------------SWEETALERT2---------------------------------
 
 
 function ItemDetailContainer() {
@@ -14,6 +24,9 @@ function ItemDetailContainer() {
 
   const { cart, addItem} = useContext(cartContext);
 
+  // Const, para controlar la visibilidad de ItemCount
+  const [showItemCount, setShowItemCount] = useState(true); 
+
   useEffect(() => {
     getSingleItem(id).then((respuesta) => {
       setProduct(respuesta);
@@ -22,13 +35,23 @@ function ItemDetailContainer() {
 
   function onAddToCart(count) {
     addItem(product, count);
+    // Oculto el ItemCount
+    setShowItemCount(false); 
+    MySwal.fire({
+      title: "Producto agregado al Carrito ",
+      width: 700,
+      padding: "3em",
+      color: "rgba(104,5,29,0.9)",
+      background: "#fff",
+      backdrop: "rgba(5,7,6,0.8)",
+      icon: "success",
+  });
   }
 
   if (product.length === 0) {
     return <Loader/>;
   }
 
-  /* return <ItemDetail .... /> */
 
   return (
     <div className="container">
@@ -42,21 +65,19 @@ function ItemDetailContainer() {
                         <h4 className="card-title text-black">{product.title}</h4>
                         <p className="card-text text-black">{product.description}</p>
                         <p className="card-text text-black">{product.detail}</p>
-                        <ItemCount onAddToCart={onAddToCart} />                                
+
+                        {showItemCount ? (<ItemCount onAddToCart={onAddToCart} />) : (
+                        <Link to="/cart">
+                          <Button type="button" className="btn btn-primary">Ir al Carrito</Button>
+                        </Link>
+                        )}                                
                     </div>
                 </div>
             </div>
-            {/* <div className="m-3">
-              <Link to={`/detalle/${product.id - 1}`}>
-                <Button className="btn btn-secondary btn-sm m-4">← Anterior</Button>
-              </Link>
-              <Link to={`/detalle/${product.id + 1}`}>
-                <Button className="btn btn-secondary btn-sm">Siguiente →</Button>
-              </Link>
-            </div> */}
         </div>
     </div>
   );
 }
 
 export default ItemDetailContainer;
+

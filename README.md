@@ -18,7 +18,7 @@ Este ID se muestra al usuario en una alerta generada mediante la librería Sweet
 
 ## LIBRERIAS UTILIZADAS
 
->**SweetAlert2 React Content**: se utiliza para mostrar una alerta cuando se finaliza la compra.
+>**SweetAlert2 React Content**: se utiliza para mostrar una alerta cuando se agrega un producto al carrito y cuando se finaliza la compra.
 
 >**Bootstrap**: se utiliza para dar estilo a la aplicación.
 
@@ -32,4 +32,4 @@ Este ID se muestra al usuario en una alerta generada mediante la librería Sweet
 
 La aplicación ha sido deployada en Vercel. 
 
-[TODO CAMISETAS](https://proyecto-final-reactjs-flier-josias-51175-bqp7stdvb-josiasflier.vercel.app/)
+[TODO CAMISETAS](https://proyecto-final-reactjs-flier-josias-51175.vercel.app/)

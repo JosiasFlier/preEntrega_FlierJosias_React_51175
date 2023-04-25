@@ -127,7 +127,7 @@ function CartContainer() {
                     </table>
 
                     <div className="cartList_detail cartList-bg">
-                        <h4>El total de tu compra es de ${totalCart}</h4>
+                        <h4>El precio total de tu compra es de ${totalCart}</h4>
                     </div>
                     <FormCheckout
                         onClick={handleCheckout}

@@ -42,7 +42,7 @@ export default function FormCheckout({ onClick }) {
                     gridGap: "1rem",
                 }}
             >
-                <label className="label-input">Nombre</label>
+                <label className="label-input" htmlFor="username">Nombre</label>
                 <input
                     value={userData.username}
                     name="username"
@@ -50,8 +50,9 @@ export default function FormCheckout({ onClick }) {
                     placeholder="Nombre"
                     required
                     onChange={handleInputChange}
+                    id="username"
                 />
-                <label className="label-input">Email</label>
+                <label className="label-input" htmlFor="email">Email</label>
                 <input
                     value={userData.email}
                     name="email"
@@ -59,8 +60,9 @@ export default function FormCheckout({ onClick }) {
                     placeholder="Email"
                     required
                     onChange={handleInputChange}
+                    id="email"
                 />
-                <label className="label-input">Teléfono</label>
+                <label className="label-input" htmlFor="phone">Teléfono</label>
                 <input
                     value={userData.phone}
                     name="phone"
@@ -68,6 +70,7 @@ export default function FormCheckout({ onClick }) {
                     placeholder="Teléfono"
                     required
                     onChange={handleInputChange}
+                    id="phone"
                 />
                 <Button
                     className="btn btn-secondary"
